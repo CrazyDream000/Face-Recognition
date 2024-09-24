@@ -272,7 +272,7 @@ def run_on_tensor(weights, ip_tensor, num_classes, process_unit='cpu'):
 
 def get_slide_windows(frames, window_size, stride=1):
     indices = torch.arange(0, frames.shape[0])
-    window_indices = indices.unfold(0, window_size, stride)
+    window_indices = indices.unfold(0, window_size)
 
     return frames[window_indices, :, :, :].transpose(1, 2)
 
